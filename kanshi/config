@@ -1,0 +1,16 @@
+profile {
+    output eDP-1 enable mode 1920x1200 position 0,0
+}
+
+profile {
+    output eDP-1 enable mode 1920x1200 position 0,1080
+    #--- output HDMI-A-1 enable mode 1920x1080 position 0,0 ---
+    
+    exec swaymsg focus output eDP-1
+}
+
+profile {
+    output eDP-1 enable mode 1920x1200 position 0,0
+	output "Acer Technologies Acer G195HQL LNB0W0084320" enable mode 1366x768 position 1920,0 transform 270
+    exec swaymsg focus output eDP-1
+}

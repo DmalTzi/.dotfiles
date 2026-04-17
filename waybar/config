@@ -1,0 +1,141 @@
+[
+	{
+		"position": "top",
+		"height": 30,
+		"spacing": 4,
+		"margin": "4 4 4 4",
+		"output": "eDP-1",
+		
+		"modules-left": [
+			"sway/workspaces",
+			"sway/mode",
+			"sway/scratchpad",
+			"custom/media"
+		],
+		
+		"modules-center": [
+			"clock"
+		],
+		
+		"modules-right": [
+			"pulseaudio", 
+			"pulseaudio#microphone",
+			"sway/language",
+			"custom/fcitx5",
+			"network",
+			"backlight",
+			"battery"
+		],
+
+		"sway/workspaces": {
+			"disable-scroll": true,
+			"all-outputs": true,
+			"format": "{icon}",
+			"persistent-workspaces": {
+				"1": [],
+				"2": [],
+				"3": []
+			},
+			"format-icons": {
+				"urgent": "",
+				"focused": "",
+				"default": ""
+			}
+		},
+
+		"sway/mode": {
+			"format": "<span style=\"italic\">{}</span>"
+		},
+
+		"sway/scratchpad": {
+			"format": "{icon} {count}",
+			"show-empty": false,
+			"format-icons": ["", ""],
+			"tooltip": true,
+			"tooltip-format": "{app}: {title}"
+		},
+
+		"clock": {
+			"format": "{:%a %d %b %I:%M %p}",
+			"format-alt": "{:%Y-%m-%d}",
+			"tooltip-format": "{calendar}"
+		},
+
+		"backlight": {
+			"format": "{percent}% {icon}",
+			"format-icons": ["", "", "", "", "", "", "", "", ""]
+		},
+
+		"battery": {
+			"states": {
+				"good": 95,
+				"warning": 30,
+				"critical": 15
+			},
+			"format": "{capacity}% {icon}",
+			"format-charging": "{capacity}% 󱐋",
+			"format-plugged": "{capacity}% ",
+			"format-icons": ["", "", "", "", ""]
+		},
+
+		"network": {
+			"format-wifi": "{essid} ({signalStrength}%) ",
+			"format-ethernet": "{ipaddr}/{cidr} ",
+			"tooltip-format": "{ifname} via {gwaddr} ",
+			"format-linked": "{ifname} (No IP) ",
+			"format-disconnected": "Disconnected ⚠",
+			"format-alt": "{ifname}: {ipaddr}/{cidr}"
+		},
+
+		"pulseaudio": {
+			"format": "{volume}% {icon}",
+			"format-bluetooth": "{volume}% ",
+			"format-muted": "Muted 󰖁",
+			"format-icons": {
+				"headphone": "",
+				"phone": "",
+				"portable": "",
+				"car": "",
+				"default": ["󰕿", "󰖀", ""]
+			},
+			"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+			"on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+",
+			"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+		},
+		"pulseaudio#microphone": {
+			"format": "{format_source}",
+			"format-source": "{volume}% ",
+			"format-source-muted": "Muted ",
+			"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+			"on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 5%+",
+			"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+			
+			"scroll-step": 5
+		},
+		"sway/language": {
+			"format": "  {}",
+			"tooltip": false,
+			"format-en": "US",
+			"format-th": "TH"
+		},
+		"custom/fcitx5": {
+			"exec": "fcitx5-remote -n | grep -q 'mozc' && echo 'JP' || echo ''",
+			"interval": 1,
+			"tooltip": false
+		}
+
+	},
+	{
+        "output": "HDMI-A-1",
+        "layer": "top",
+        "position": "top",
+		"modules-center": [
+			"clock"
+		],
+		"clock": {
+			"format": "{:%a %d %b %I:%M %p}",
+			"format-alt": "{:%Y-%m-%d}",
+			"tooltip-format": "{calendar}"
+		},
+	}
+]

@@ -1,0 +1,80 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* ใส่ชื่อฟอนต์ Monaspace และตามด้วย Nerd Font */
+    font-family: "Monaspace Krypton Frozen", "FontAwesome", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.8); /* เพิ่มความทึบนิดหน่อยให้อ่านง่าย */
+
+	border-radius: 15px;
+
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* แก้ #workspace เป็น #workspaces (เติม s) */
+#clock, #workspaces, #battery, #backlight, #network, #pulseaudio {
+    padding: 0 10px;
+}
+
+/* --- Workspaces Styling --- */
+#workspaces {
+    background-color: rgba(255, 255, 255, 0.1); /* พื้นหลังจางๆ ให้กลุ่ม workspaces */
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+
+#workspaces button {
+	opacity: 1;
+    padding: 0 4px;
+	margin: 1px 0;
+
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 10px;
+    transition: all 0.1s ease;
+}
+
+#workspaces button:hover {
+	opacity: 0.8;
+	background-color: transparent;
+}
+
+#workspaces button.focused {
+    background-color: #ffffff;
+    color: #333333;
+    /* min-width: 30px; */
+	padding: 0 12px;
+	opacity: 1;
+    
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+	opacity: 1;
+    background-color: #eb4d4b;
+}
+
+#workspaces button.empty {
+	opacity: 0.4;
+}
+
+#custom-home {
+    font-size: 24px;       
+    color: #89b4fa;        
+    background-color: transparent;
+    margin-left: 8px;   
+}
+
+#custom-home:hover {
+	color: white;
+}
