@@ -3,8 +3,8 @@ local module = {}
 function module.setup()
 	-- vim keymap toggle comment
 	local commenter = require("my_tools.commenter")
-	vim.keymap.set({'n', 'i'}, '<C-/>', commenter.toggle_signle_comment, {silent = true, noremap = true})
-	vim.keymap.set('v', '<C-/>', commenter.toggle_multiple_comment, {silent = true, noremap = true})
+	vim.keymap.set({'n', 'v'}, '<leader>m', commenter.toggle_signle_comment, {silent = false, noremap = true})
+	vim.keymap.set('v', '<leader>m', commenter.toggle_multiple_comment, {silent = true, noremap = true})
 
 	-- vim keymap toggle relativenumber
 	vim.keymap.set('n', 'eN', function()
@@ -13,7 +13,9 @@ function module.setup()
 
 	-- leader key map
 	vim.keymap.set("n", "<leader>w", ":w<CR>")
-
+	vim.keymap.set("n", "<leader>q", ":wq<CR>")
+	-- vim.keymap.set("n", "<leader>q!", ":q!<CR>")
+	
 	-- LSP keymap
 	local module_lsp = require("lsp")
 	module_lsp.setup()

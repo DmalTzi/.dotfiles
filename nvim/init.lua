@@ -1,4 +1,4 @@
 require("config")
-require("keymap").setup()
+require("keymaps").setup()
 
 vim.opt.grepprg = "rg --vimgrep"
